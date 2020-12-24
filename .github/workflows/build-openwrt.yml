@@ -91,6 +91,10 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
+    - name: 编译kpr
+      run: |
+        make package/luci-app-koolproxyR/{clean,compile} V=s
+
     - name: Download package
       id: package
       run: |
